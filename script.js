@@ -1,13 +1,10 @@
-angular.module('Website', ['ui.router'])
+angular.module('Website', [])
 
-.config(function($urlRouterProvider, $stateProvider){
-        $urlRouterProvider.otherwise('/');
-    $stateProvider
-    .state('home',{
-        url:'/',
-        templateUrl: "templates/home.html",
-        controller: "MainController"
-    })
+.directive('mainDirective', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'templates/home.html'
+  };
 })
 
 .controller('MainController', function($scope, $window) {
